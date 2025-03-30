@@ -6,48 +6,69 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { motion } from 'framer-motion';
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-20 bg-gradient-to-b from-huriky-blue/30 to-huriky-black">
+    <section id="faq" className="py-20 bg-gradient-to-b from-huriky-blue/30 to-huriky-black relative">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-          <p className="text-gray-400">
-            Find answers to common questions about HurikyNetwork's VPN services.
-          </p>
+          <motion.h2 
+            className="text-3xl font-bold mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            Часто задаваемые вопросы
+          </motion.h2>
+          <motion.p 
+            className="text-gray-400"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Найдите ответы на общие вопросы о VPN-сервисах HurikyNetwork.
+          </motion.p>
         </div>
         
         <div className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
             <FaqItem 
-              question="What is VLESS and how is it different from other VPN protocols?"
-              answer="VLESS is a lightweight and efficient tunneling protocol designed to overcome the limitations of traditional VPN protocols. It provides better performance, lower latency, and enhanced security while being more difficult to detect and block compared to conventional VPN solutions."
+              question="Что такое VLESS и чем он отличается от других VPN-протоколов?"
+              answer="VLESS - это легкий и эффективный протокол туннелирования, разработанный для преодоления ограничений традиционных VPN-протоколов. Он обеспечивает лучшую производительность, меньшую задержку и повышенную безопасность, будучи при этом более трудно обнаруживаемым и блокируемым по сравнению с обычными VPN-решениями."
+              delay={0}
             />
             
             <FaqItem 
-              question="Does HurikyNetwork keep logs of my browsing activity?"
-              answer="No. HurikyNetwork maintains a strict zero-logging policy. We do not track, store, or monitor your online activities, connection timestamps, or IP addresses. Your privacy is our top priority."
+              question="Ведет ли HurikyNetwork логи моей активности в интернете?"
+              answer="Нет. HurikyNetwork придерживается строгой политики нулевого логирования. Мы не отслеживаем, не храним и не мониторим вашу онлайн-активность, временные метки соединений или IP-адреса. Ваша конфиденциальность — наш главный приоритет."
+              delay={0.1}
             />
             
             <FaqItem 
-              question="How many devices can I connect simultaneously?"
-              answer="The number of simultaneous connections depends on your subscription plan. Basic allows 5 connections, Premium allows 10 connections, and Enterprise offers unlimited connections across all your devices."
+              question="Сколько устройств я могу подключить одновременно?"
+              answer="Количество одновременных подключений зависит от вашего тарифного плана. Базовый позволяет 5 подключений, Премиум — 10 подключений, а Корпоративный предлагает неограниченное количество подключений на всех ваших устройствах."
+              delay={0.2}
             />
             
             <FaqItem 
-              question="Will using HurikyNetwork slow down my internet connection?"
-              answer="Unlike traditional VPNs that may significantly reduce your speed, HurikyNetwork's VLESS protocol is designed for minimal performance impact. With our 10 Gbps network infrastructure, many users actually experience improved speeds due to our traffic optimization and reduction of ISP throttling."
+              question="Будет ли использование HurikyNetwork замедлять мое интернет-соединение?"
+              answer="В отличие от традиционных VPN, которые могут значительно снизить вашу скорость, протокол VLESS от HurikyNetwork разработан с минимальным влиянием на производительность. Благодаря нашей инфраструктуре сети 10 Гбит/с, многие пользователи фактически испытывают улучшение скорости из-за нашей оптимизации трафика и уменьшения ограничений со стороны интернет-провайдера."
+              delay={0.3}
             />
             
             <FaqItem 
-              question="Is HurikyNetwork compatible with streaming services?"
-              answer="Yes. HurikyNetwork is optimized to work seamlessly with major streaming platforms, allowing you to access geo-restricted content without buffering issues. Our specialized streaming servers ensure high-definition playback."
+              question="Совместим ли HurikyNetwork со стриминговыми сервисами?"
+              answer="Да. HurikyNetwork оптимизирован для бесперебойной работы с основными стриминговыми платформами, позволяя вам получить доступ к географически ограниченному контенту без проблем с буферизацией. Наши специализированные серверы для стриминга обеспечивают воспроизведение в высоком качестве."
+              delay={0.4}
             />
             
             <FaqItem 
-              question="How do I set up HurikyNetwork on my devices?"
-              answer="Once you subscribe to HurikyNetwork, you'll receive access to our easy-to-use applications for Windows, macOS, Linux, iOS, and Android. Our setup wizards guide you through a simple installation process that takes less than 2 minutes. For advanced users, we also provide detailed configuration guides for manual setup on routers and other devices."
+              question="Как настроить HurikyNetwork на моих устройствах?"
+              answer="После подписки на HurikyNetwork вы получите доступ к нашим удобным приложениям для Windows, macOS, Linux, iOS и Android. Наши мастера установки проведут вас через простой процесс установки, который займет менее 2 минут. Для продвинутых пользователей мы также предоставляем подробные руководства по настройке для ручной установки на маршрутизаторах и других устройствах."
+              delay={0.5}
             />
           </Accordion>
         </div>
@@ -56,16 +77,27 @@ const FAQ = () => {
   );
 };
 
-const FaqItem = ({ question, answer }: { question: string, answer: string }) => {
+const FaqItem = ({ question, answer, delay }: { 
+  question: string, 
+  answer: string,
+  delay: number
+}) => {
   return (
-    <AccordionItem value={question} className="border border-gray-800 rounded-lg bg-huriky-darkgray/30 overflow-hidden">
-      <AccordionTrigger className="px-6 py-4 hover:bg-huriky-darkgray/50 transition-colors">
-        {question}
-      </AccordionTrigger>
-      <AccordionContent className="px-6 pb-4 pt-2 text-gray-400">
-        {answer}
-      </AccordionContent>
-    </AccordionItem>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      viewport={{ once: true }}
+    >
+      <AccordionItem value={question} className="border border-gray-800 rounded-lg bg-huriky-darkgray/30 overflow-hidden backdrop-blur-sm">
+        <AccordionTrigger className="px-6 py-4 hover:bg-huriky-darkgray/50 transition-colors">
+          {question}
+        </AccordionTrigger>
+        <AccordionContent className="px-6 pb-4 pt-2 text-gray-400">
+          {answer}
+        </AccordionContent>
+      </AccordionItem>
+    </motion.div>
   );
 };
 
