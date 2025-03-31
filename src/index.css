@@ -54,3 +54,7 @@
   background-size: 30px 30px;
   background-position: 0 0, 15px 15px;
 }
+
+.glow-effect {
+  box-shadow: 0 0 15px rgba(253, 224, 71, 0.3);
+}
