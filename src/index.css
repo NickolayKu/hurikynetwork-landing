@@ -59,13 +59,6 @@
   box-shadow: 0 0 15px rgba(253, 224, 71, 0.3);
 }
 
-.bg-grid-pattern {
-  background-image: 
-    linear-gradient(rgba(253, 224, 71, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(253, 224, 71, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
 .shadow-glow {
   box-shadow: 0 0 8px rgba(253, 224, 71, 0.6);
 }
@@ -92,24 +85,6 @@
   to { transform: rotate(360deg); }
 }
 
-@keyframes warp {
-  0% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.2); opacity: 0.1; }
-  100% { transform: scale(1); opacity: 0.3; }
-}
-
-.animate-warp {
-  animation: warp 10s ease-in-out infinite;
-}
-
-.bg-cyber-grid {
-  background-image: 
-    linear-gradient(rgba(253, 224, 71, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(253, 224, 71, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
-  background-position: center center;
-}
-
 .text-cyber {
   text-shadow: 0 0 5px rgba(253, 224, 71, 0.5);
 }
@@ -121,23 +96,4 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
-}
-
-@keyframes data-pulse {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.1); }
-}
-
-.animate-data-pulse {
-  animation: data-pulse 3s ease-in-out infinite;
-}
-
-.bg-hologram {
-  background: repeating-linear-gradient(
-    rgba(253, 224, 71, 0.03) 1px,
-    transparent 2px,
-    transparent 4px,
-    rgba(253, 224, 71, 0.03) 5px
-  );
-  background-size: 100% 5px;
 }

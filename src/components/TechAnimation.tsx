@@ -1,110 +1,105 @@
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const TechAnimation = () => {
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden">
-      {/* Gargantua Black Hole animation */}
+      {/* Gargantua Black Hole animation - improved version */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative w-full h-full max-w-3xl max-h-3xl">
-          <motion.div 
-            className="absolute inset-0 rounded-full bg-huriky-black"
-            style={{
-              background: 'radial-gradient(circle, rgba(15,15,15,1) 30%, rgba(30,27,75,0.8) 60%, rgba(253,224,71,0.1) 90%)',
-            }}
-          />
-          
-          {/* Accretion disk */}
-          <motion.div 
-            className="absolute inset-0 rounded-full"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-            style={{ 
-              boxShadow: '0 0 60px rgba(253, 224, 71, 0.4)',
-              background: 'linear-gradient(45deg, transparent 20%, rgba(253,224,71,0.1) 40%, rgba(253,224,71,0.3) 50%, rgba(253,224,71,0.1) 60%, transparent 80%)',
-            }}
-          />
-          
-          {/* Inner event horizon glow */}
-          <motion.div 
-            className="absolute inset-[25%] rounded-full"
-            animate={{ 
-              boxShadow: ['0 0 20px rgba(253, 224, 71, 0.3)', '0 0 40px rgba(253, 224, 71, 0.5)', '0 0 20px rgba(253, 224, 71, 0.3)'] 
-            }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            style={{ 
-              background: 'radial-gradient(circle, rgba(30,27,75,0.5) 0%, rgba(15,15,15,0) 70%)'
-            }}
-          />
-        </div>
-      </div>
-      
-      {/* Advanced grid background */}
-      <div className="absolute inset-0 bg-cyber-grid opacity-20"></div>
-      
-      {/* Futuristic data particles */}
-      <div className="absolute inset-0">
-        {[...Array(30)].map((_, i) => (
+        <motion.div 
+          className="absolute w-[120vw] h-[120vw] md:w-[80vw] md:h-[80vw] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(15,15,15,1) 30%, rgba(15,15,15,0.9) 40%, rgba(253,224,71,0.7) 55%, rgba(253,224,71,0.1) 70%, rgba(15,15,15,0) 75%)',
+            boxShadow: '0 0 100px 50px rgba(253, 224, 71, 0.3)',
+          }}
+          animate={{
+            scale: [1, 1.05, 1],
+            opacity: [1, 0.95, 1],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        {/* Bright event horizon ring */}
+        <motion.div 
+          className="absolute w-[90vw] h-[90vw] md:w-[60vw] md:h-[60vw] rounded-full border-[15px] md:border-[30px] border-huriky-yellow"
+          style={{
+            boxShadow: '0 0 70px 20px rgba(253, 224, 71, 0.6), inset 0 0 70px 20px rgba(253, 224, 71, 0.6)',
+            background: 'transparent',
+          }}
+          animate={{
+            scale: [1, 1.03, 1],
+            opacity: [0.8, 0.6, 0.8],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        {/* Central black hole */}
+        <motion.div 
+          className="absolute w-[60vw] h-[60vw] md:w-[40vw] md:h-[40vw] rounded-full bg-huriky-black"
+          style={{
+            boxShadow: 'inset 0 0 50px 10px rgba(15, 15, 15, 1)',
+          }}
+          animate={{
+            scale: [1, 1.02, 1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        {/* Accretion disk with rotation */}
+        <motion.div 
+          className="absolute w-[85vw] h-[85vw] md:w-[55vw] md:h-[55vw] rounded-full"
+          style={{
+            background: 'linear-gradient(45deg, transparent 25%, rgba(253,224,71,0.2) 45%, rgba(253,224,71,0.4) 50%, rgba(253,224,71,0.2) 55%, transparent 75%)',
+            boxShadow: '0 0 80px rgba(253, 224, 71, 0.3)'
+          }}
+          animate={{ 
+            rotate: 360,
+          }}
+          transition={{ 
+            duration: 50, 
+            repeat: Infinity, 
+            ease: "linear" 
+          }}
+        />
+        
+        {/* Light flares */}
+        {[...Array(5)].map((_, i) => (
           <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-huriky-yellow/50 rounded-full shadow-glow"
-            initial={{ 
-              x: Math.random() * 100 - 50, 
-              y: Math.random() * 100 - 50, 
-              scale: 0 
+            key={`flare-${i}`}
+            className="absolute rounded-full"
+            style={{
+              background: 'radial-gradient(circle, rgba(253,224,71,0.8) 0%, rgba(253,224,71,0) 70%)',
+              width: `${30 + Math.random() * 40}px`,
+              height: `${30 + Math.random() * 40}px`,
+              left: `calc(50% + ${Math.cos(i * 72 * Math.PI / 180) * (25 + Math.random() * 5)}vw)`,
+              top: `calc(50% + ${Math.sin(i * 72 * Math.PI / 180) * (25 + Math.random() * 5)}vw)`,
             }}
-            animate={{ 
-              x: [null, Math.random() * 100 - 50],
-              y: [null, Math.random() * 100 - 50],
-              scale: [0, Math.random() * 0.5 + 0.5, 0],
-              opacity: [0, 0.8, 0]
+            animate={{
+              opacity: [0.2, 0.8, 0.2],
+              scale: [1, 1.5, 1],
             }}
-            transition={{ 
-              duration: 3 + Math.random() * 4,
+            transition={{
+              duration: 4 + Math.random() * 3,
               repeat: Infinity,
-              delay: Math.random() * 3,
-              ease: "easeInOut"
+              ease: "easeInOut",
+              delay: Math.random() * 2
             }}
           />
         ))}
       </div>
-
-      {/* Digital circuit lines */}
-      <div className="absolute bottom-0 left-0 w-full h-96 opacity-20">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full">
-          {[...Array(5)].map((_, i) => (
-            <motion.path
-              key={`circuit-${i}`}
-              d={`M${Math.random() * 20},${70 + i * 5} Q${25 + Math.random() * 20},${50 + Math.random() * 30} ${50 + Math.random() * 10},${70 + i * 3} T${100 - Math.random() * 20},${65 + i * 5}`}
-              stroke="#FDE047"
-              strokeWidth="0.2"
-              fill="none"
-              initial={{ pathLength: 0, opacity: 0.3 + Math.random() * 0.5 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 4 + Math.random() * 3, repeat: Infinity, delay: Math.random() * 2 }}
-            />
-          ))}
-        </svg>
-      </div>
-      
-      {/* Holographic overlay */}
-      <motion.div
-        className="absolute inset-0"
-        style={{ 
-          backgroundImage: 'repeating-linear-gradient(rgba(253, 224, 71, 0.03) 1px, transparent 2px, transparent 4px, rgba(253, 224, 71, 0.03) 5px)',
-          backgroundSize: '100% 5px'
-        }}
-        animate={{ 
-          y: [0, 10]
-        }}
-        transition={{ 
-          duration: 10, 
-          repeat: Infinity, 
-          ease: "linear", 
-          repeatType: "reverse" 
-        }}
-      />
     </div>
   );
 };
