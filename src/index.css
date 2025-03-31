@@ -70,6 +70,14 @@
   box-shadow: 0 0 8px rgba(253, 224, 71, 0.6);
 }
 
+.shadow-glow-subtle {
+  box-shadow: 0 0 12px rgba(253, 224, 71, 0.3);
+}
+
+.shadow-glow-intense {
+  box-shadow: 0 0 20px rgba(253, 224, 71, 0.7), 0 0 40px rgba(253, 224, 71, 0.3);
+}
+
 @keyframes pulse-slow {
   0%, 100% { opacity: 0.7; }
   50% { opacity: 1; }
@@ -82,6 +90,16 @@
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@keyframes warp {
+  0% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.2); opacity: 0.1; }
+  100% { transform: scale(1); opacity: 0.3; }
+}
+
+.animate-warp {
+  animation: warp 10s ease-in-out infinite;
 }
 
 .bg-cyber-grid {
@@ -103,4 +121,23 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+@keyframes data-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.animate-data-pulse {
+  animation: data-pulse 3s ease-in-out infinite;
+}
+
+.bg-hologram {
+  background: repeating-linear-gradient(
+    rgba(253, 224, 71, 0.03) 1px,
+    transparent 2px,
+    transparent 4px,
+    rgba(253, 224, 71, 0.03) 5px
+  );
+  background-size: 100% 5px;
 }

@@ -7,6 +7,7 @@ import Pricing from '@/components/Pricing';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import TechAnimation from '@/components/TechAnimation';
+import DataStream from '@/components/DataStream';
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <TechAnimation />
       <Navbar />
       <Hero />
+      <DataStream />
       <Features />
       <Pricing />
       <FAQ />
