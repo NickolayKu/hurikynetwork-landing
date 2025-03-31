@@ -2,7 +2,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Shield, Globe, Zap } from 'lucide-react';
-import CyberGlobe from './CyberGlobe';
 
 const Hero = () => {
   return (
@@ -32,11 +31,9 @@ const Hero = () => {
             </Button>
           </div>
 
-          <CyberGlobe />
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
             <div className="flex flex-col items-center p-6 rounded-lg bg-huriky-darkgray/50 border border-gray-800 backdrop-blur-sm hover:border-huriky-yellow/30 transition-all duration-300">
-              <Shield className="h-10 w-10 mb-4 text-huriky-yellow animate-pulse-slow" />
+              <Shield className="h-10 w-10 mb-4 text-huriky-yellow" />
               <h3 className="text-lg font-medium mb-2">Сквозное шифрование</h3>
               <p className="text-sm text-gray-400 text-center">
                 Ваши данные зашифрованы от вашего устройства до точки назначения.
@@ -44,7 +41,7 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col items-center p-6 rounded-lg bg-huriky-darkgray/50 border border-gray-800 backdrop-blur-sm hover:border-huriky-yellow/30 transition-all duration-300">
-              <Globe className="h-10 w-10 mb-4 text-huriky-yellow animate-pulse-slow" />
+              <Globe className="h-10 w-10 mb-4 text-huriky-yellow" />
               <h3 className="text-lg font-medium mb-2">Глобальная сеть</h3>
               <p className="text-sm text-gray-400 text-center">
                 Точки доступа в более чем 90 странах для максимальной гибкости.
@@ -52,7 +49,7 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col items-center p-6 rounded-lg bg-huriky-darkgray/50 border border-gray-800 backdrop-blur-sm hover:border-huriky-yellow/30 transition-all duration-300">
-              <Zap className="h-10 w-10 mb-4 text-huriky-yellow animate-pulse-slow" />
+              <Zap className="h-10 w-10 mb-4 text-huriky-yellow" />
               <h3 className="text-lg font-medium mb-2">Молниеносная скорость</h3>
               <p className="text-sm text-gray-400 text-center">
                 Оптимизированные серверы обеспечивают минимальную задержку для вашего соединения.

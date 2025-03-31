@@ -2,7 +2,6 @@
 import React from 'react';
 import { Lock, Server, Network, Eye, Zap, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
-import DataStream from './DataStream';
 
 const Features = () => {
   return (
@@ -28,8 +27,6 @@ const Features = () => {
             Испытайте беспрецедентную конфиденциальность и производительность с нашей передовой технологией VPN.
           </motion.p>
         </div>
-        
-        <DataStream />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <FeatureCard 
