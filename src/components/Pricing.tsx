@@ -5,12 +5,12 @@ import { Check } from 'lucide-react';
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="py-20 bg-huriky-black">
+    <section id="pricing" className="py-20 hero-pattern">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Choose Your Protection Plan</h2>
+          <h2 className="text-3xl font-bold mb-4">Подберите подходящий тариф</h2>
           <p className="text-gray-400">
-            Select the level of security that suits your needs. All plans include our core technology.
+            Выберите наиболее подходящие вам опции. Все планы включают все преимущества протокола.
           </p>
         </div>
         
@@ -62,12 +62,12 @@ const Pricing = () => {
           />
         </div>
         
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <p className="text-gray-500 text-sm mb-4">Need a custom solution for your organization?</p>
           <Button variant="outline" className="border-gray-700 text-gray-300">
             Contact Sales
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -80,7 +80,7 @@ const PricingCard = ({ title, price, features, isPopular }: {
   isPopular: boolean 
 }) => {
   return (
-    <div className={`rounded-lg border ${isPopular ? 'border-huriky-yellow glow-effect' : 'border-gray-800'} p-8 relative`}>
+    <div className={`rounded-lg border bg-huriky-black ${isPopular ? 'border-huriky-yellow glow-effect' : 'border-gray-800'} p-8 relative`}>
       {isPopular && (
         <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-huriky-yellow text-huriky-black text-xs font-bold px-3 py-1 rounded-full">
           MOST POPULAR
@@ -104,8 +104,8 @@ const PricingCard = ({ title, price, features, isPopular }: {
         ))}
       </ul>
       
-      <Button className={`w-full ${isPopular ? 'bg-huriky-yellow hover:bg-huriky-yellow/90 text-huriky-black' : 'bg-huriky-darkgray hover:bg-huriky-darkgray/70'}`}>
-        {isPopular ? 'Get Started' : 'Select Plan'}
+      <Button className={`w-full ${isPopular ? 'bg-huriky-yellow hover:bg-huriky-yellow/90 text-huriky-black' : 'bg-huriky-black border text-gray-300 border-huriky-yellow hover:bg-huriky-darkgray/70'}`}>
+        Перейти к покупке
       </Button>
     </div>
   );

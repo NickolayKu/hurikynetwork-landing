@@ -11,10 +11,10 @@ const Navbar = () => {
         
         <div className="hidden md:flex items-center gap-8">
           <a href="#features" className="text-sm text-gray-300 hover:text-huriky-yellow transition-colors">
-            Features
+            Преимущества
           </a>
           <a href="#pricing" className="text-sm text-gray-300 hover:text-huriky-yellow transition-colors">
-            Pricing
+            Цены
           </a>
           <a href="#faq" className="text-sm text-gray-300 hover:text-huriky-yellow transition-colors">
             FAQ
@@ -22,12 +22,14 @@ const Navbar = () => {
         </div>
         
         <div className="flex items-center gap-4">
-          <Button variant="ghost" className="hidden md:inline-flex text-gray-300 hover:text-white">
+          {/* <Button variant="ghost" className="hidden md:inline-flex text-gray-300 hover:text-white">
             Login
-          </Button>
-          <Button className="bg-huriky-yellow hover:bg-huriky-yellow/80 text-huriky-black">
-            Get Started
-          </Button>
+          </Button> */}
+          <a href='#pricing'>
+            <Button className="bg-huriky-yellow hover:bg-huriky-yellow/80 text-huriky-black">
+              Начать пользоваться
+            </Button>
+          </a>
         </div>
       </div>
     </nav>

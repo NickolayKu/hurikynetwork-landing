@@ -13,7 +13,7 @@ const Logo = ({ size = 24, className = "" }: LogoProps) => {
       <div className="bg-huriky-black p-1 rounded-md">
         <Zap size={size} className="text-huriky-yellow fill-huriky-yellow" />
       </div>
-      <span className="font-bold text-white tracking-tight">HurikyNetwork</span>
+      <span className="font-bold text-white tracking-tight">Huriky<span className='text-gray-300'>Network</span></span>
     </div>
   );
 };
